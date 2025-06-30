@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Libro de Reclamaciones Virtual</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+    input[type="text"], input[type="email"], textarea, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    textarea {
+      height: 100px;
+      resize: vertical;
+    }
+    .section-title {
+      background: #eaeaea;
+      padding: 10px;
+      margin-top: 30px;
+      font-weight: bold;
+    }
+    .radio-group {
+      margin-top: 10px;
+    }
+    .radio-group label {
+      font-weight: normal;
+      margin-right: 20px;
+    }
+    .btn-group {
+      text-align: right;
+      margin-top: 30px;
+    }
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .btn-enviar {
+      background-color: #28a745;
+    }
+    .btn-imprimir {
+      background-color: #007bff;
+      margin-right: 10px;
+    }
+    small {
+      display: block;
+      margin-top: 30px;
+      color: #666;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Libro de Reclamaciones Virtual</h1>
+    <p><strong>MADERERA ANDREA EIRL</strong><br>
+      RUC: 20515474626<br>
+      Dirección Legal: Av. Tingo María N° 1338, Lima - Perú<br>
+      Email: lacasadelaspuertaseirl@gmail.com</p>
+
+    <form action="https://formsubmit.co/lacasadelaspuertaseirl@gmail.com" method="POST">
+      <div class="section-title">1. Identificación del Consumidor Reclamante</div>
+      <label>Nombre completo</label>
+      <input type="text" name="nombre" required>
+      <label>DNI / CE</label>
+      <input type="text" name="dni" required>
+      <label>Teléfono</label>
+      <input type="text" name="telefono">
+      <label>Correo electrónico</label>
+      <input type="email" name="email" required>
+      <label>Domicilio</label>
+      <input type="text" name="domicilio" required>
+
+      <div class="section-title">2. Identificación del Bien Contratado</div>
+      <label>Tipo</label>
+      <div class="radio-group">
+        <label><input type="radio" name="tipo_bien" value="Producto" required> Producto</label>
+        <label><input type="radio" name="tipo_bien" value="Servicio"> Servicio</label>
+      </div>
+      <label>Monto Reclamado (opcional)</label>
+      <input type="text" name="monto_reclamado">
+      <label>Descripción del bien o servicio</label>
+      <input type="text" name="descripcion_bien" required>
+
+      <div class="section-title">3. Detalle de la Reclamación y Pedido del Consumidor</div>
+      <label>Detalle del reclamo</label>
+      <textarea name="detalle_reclamo" required></textarea>
+      <label>Pedido del consumidor</label>
+      <textarea name="pedido" required></textarea>
+      <div class="radio-group">
+        <label><input type="radio" name="tipo_solicitud" value="Reclamo" required> Reclamo</label>
+        <label><input type="radio" name="tipo_solicitud" value="Queja"> Queja</label>
+      </div>
+
+      <!-- Configuración de FormSubmit -->
+      <input type="hidden" name="_subject" value="Nuevo reclamo recibido - Libro de Reclamaciones Virtual">
+      <input type="hidden" name="_autoresponse" value="Gracias por registrar su reclamo. Maderera Andrea EIRL lo atenderá en un plazo máximo de 15 días hábiles.">
+      <input type="hidden" name="_template" value="box">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://tusitioweb.com/gracias.html">
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-imprimir" onclick="window.print()">Imprimir</button>
+        <button type="submit" class="btn btn-enviar">Enviar</button>
+      </div>
+    </form>
+
+    <small>
+      <strong>RECLAMO:</strong> Disconformidad relacionada a los productos o servicios.<br>
+      <strong>QUEJA:</strong> Disconformidad no relacionada a los productos o servicios, o malestar respecto a la atención al público.<br><br>
+      El proveedor debe responder en un plazo no mayor a quince (15) días hábiles. La presentación del reclamo no impide acudir a otras vías de solución ni constituye denuncia ante Indecopi.<br>
+      Sus datos serán tratados conforme a la Ley de Protección de Datos Personales.
+    </small>
+  </div>
+</body>
+</html>
